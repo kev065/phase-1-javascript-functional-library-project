@@ -91,3 +91,47 @@ function mySize(collection) {
 
     return newArray.length
 }
+
+
+function myFirst(collection, n) {
+    let newArray;
+    if (!Array.isArray(collection)) {
+        newArray = Object.values(collection)
+    } else {
+        newArray = [...collection]
+    }
+
+    if (n) {
+        let nthNumbers = []
+        for (let i = 0; i < n; i++) {
+            nthNumbers.push(newArray[i])
+        }
+        return nthNumbers
+    }else{
+       return newArray[0]
+    }
+}
+
+
+function myLast(collection, n){
+    let newArray;
+    if (!Array.isArray(collection)) {
+        newArray = Object.values(collection)
+    } else {
+        newArray = [...collection]
+    }
+
+    if(n){
+       return newArray.slice(newArray.length - n)
+    }else{
+        return newArray[newArray.length - 1]
+    }
+}
+
+function myKeys(object){
+    return Object.keys(object)
+}
+
+function myValues(object){
+    return Object.values(object)
+}
